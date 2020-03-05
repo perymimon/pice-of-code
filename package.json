@@ -1,0 +1,20 @@
+{
+  "name": "pice-of-code",
+  "version": "1.0.0",
+  "description": "collection of nice snippet I collect and write from all over the world",
+  "main": "example.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perymimon/pice-of-code.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/perymimon/pice-of-code/issues"
+  },
+  "homepage": "https://github.com/perymimon/pice-of-code#readme"
+}

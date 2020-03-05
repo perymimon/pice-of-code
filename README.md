@@ -1,6 +1,10 @@
 # pice-of-code
-collection of nice snipert i collect from all over the world
+collection of nice snippet I collect and write from all over the world
 
 * promise allStelled
 * promise any
 * server-sent-event
+
+## objects
+    objectGet
+    flatObject
