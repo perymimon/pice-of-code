@@ -1,3 +1,21 @@
+class nextImage {
+    toDataUrl(encoded) {
+
+    }
+
+    fromUrl(url) {
+        if (url.test(/\.svg$/)) {
+
+        }
+    }
+
+    fromSVGTag() {
+
+    }
+
+
+}
+
 export function svgToDataUrl(svgTag, base64 = true) {
     var string = new XMLSerializer().serializeToString(svgTag)
     if (base64) {
