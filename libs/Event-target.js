@@ -1,29 +1,3 @@
-// import {devTool} from 'devtool/futile-devtool'
-
-import {devTool} from "../devtool/futile-devtool";
-
-export function proxyEvent(object, eventName, sourceObject) {
-    sourceObject.addEventListener(eventName, function (evt) {
-    	// devTool.log(eventName,evt);
-        return object.dispatchEvent(evt);
-    });
-}
-
-export function proxyEvent2(object, eventName, sourceObject, eventNameSource) {
-    sourceObject.addEventListener(eventNameSource, function (evt) {
-        var event = Object.setPrototypeOf(new Event(eventName), evt);
-        return object.dispatchEvent(event);
-    });
-}
-
-
-export class Event {
-    constructor(type, data) {
-        this.type = type;
-        this.data = data;
-        this.originalTarget = null;
-    }
-}
 
 /**
  * @typedef {EventListener|function(!Event):*}
@@ -97,7 +71,7 @@ export class EventTarget {
         }
         if (type in this[LISTENERS]) {
             options = options || {};
-            handler.capture = (options === true ) || !!options.capture;
+            handler.capture = (options === true) || !!options.capture;
             var phase = handler.capture ? 'capture' : 'bubbling';
             var handlers = this[LISTENERS][type][phase];
             var index = handlers.indexOf(handler);
@@ -105,8 +79,7 @@ export class EventTarget {
                 // Clean up if this was the last listener.
                 if (handlers.length == 1) {
                     this[LISTENERS][type][phase] = [];
-                }
-                else {
+                } else {
                     handlers.splice(index, 1);
                 }
             }
@@ -194,7 +167,7 @@ export class EventTarget {
         prevented |= runListenerSequence.call(this, event, type);
 
         /** then run generic event listeners**/
-        if (type !== $EVENT_ALL ) {
+        if (type !== $EVENT_ALL) {
             /*prevented |=*/
             runListenerSequence.call(this, event, $EVENT_ALL);
         }
@@ -212,7 +185,7 @@ function runListenerSequence(event, type) {
         prevented |= callHandlers(this, listenersOfType['capture'], event);
 
     if (this[PROXYS]
-    /** proxy  parents**/) {
+        /** proxy  parents**/) {
         var i = 0, proxyTarget;
         while (proxyTarget = this[PROXYS][i++]) {
             proxyTarget.dispatchEvent(event, type)

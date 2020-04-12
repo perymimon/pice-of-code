@@ -1,18 +1,19 @@
 const isLocalStorageEnable = (function () {
 	try {
-		localStorage.setItem("_minTest", "test value");
-		localStorage.removeItem("_minTest");
-	}
+        localStorage.setItem("test", "test value");
+        localStorage.removeItem("test");
+    }
 	catch (error) {
 		return false;
 	}
 	return typeof (Storage) !== "undefined";
 })();
+
 const isSessionStorageEnable = (function () {
 	try {
-		sessionStorage.setItem("_minTest", "test value");
-		sessionStorage.removeItem("_minTest");
-	}
+        sessionStorage.setItem("test", "test value");
+        sessionStorage.removeItem("test");
+    }
 	catch (error) {
 		return false;
 	}

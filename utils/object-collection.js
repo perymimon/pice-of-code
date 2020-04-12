@@ -22,3 +22,8 @@ export function flatObject(obj) {
     dig(obj);
     return flatObject;
 }
+
+export function toFormDataEncoding(object) {
+    return Object.entries(object)
+        .map(pair => pair.join("=")).join('&');
+}
