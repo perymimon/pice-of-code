@@ -1,6 +1,6 @@
 {
   "name": "@perymimon/pice-of-code",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "collection of nice snippet I collect and write from all over the world",
   "main": "example.js",
   "scripts": {

@@ -23,7 +23,7 @@ export function flatObject(obj) {
     return flatObject;
 }
 
-export function toFormDataEncoding(object) {
+export function joinObject(object, delKv = '=', delPairs = '&') {
     return Object.entries(object)
-        .map(pair => pair.join("=")).join('&');
+        .map(pair => pair.join(delKv)).join(delPairs);
 }

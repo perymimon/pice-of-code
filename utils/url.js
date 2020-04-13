@@ -24,8 +24,8 @@ export function imageToDataUrl(imgTag) {
 
 }
 
-export function urlSearch(string) {
+export function splitUrl(string, delKv = '=', delPairs = '&') {
     string = string ?? decodeURIComponent(location.search.slice(1));
-    const entries = string.split('&').map(pairs => pairs.split('='));
+    const entries = string.split(delPairs).map(pairs => pairs.split(delKv));
     return Object.fromEntries(entries);
 }
