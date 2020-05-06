@@ -1,6 +1,7 @@
 /*
-* The Promise.allSettled() method returns a promise that resolves after all of the given promises have either resolved
-* or rejected, with an array of objects that each describes the outcome of each promise.
+* The Promise.allSettled() method returns a promise that resolves after all
+* of the given promises have either resolved or rejected,
+* with an array of objects that each describes the outcome of each promise.
 * */
 module.exports.allSettled = function allSettled(promises) {
     return Promise.all(

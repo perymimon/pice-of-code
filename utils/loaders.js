@@ -110,3 +110,22 @@ export function getBlob(url) {
         req.send();
     })
 }
+
+// todo : need redesign, some promise, some callback
+export function submitAsForm(src, obj, method = 'post', target = "_blank") {
+    var form = document.createElement('form');
+    form.action = src;
+    form.method = method;
+    form.target = target;
+    for (let k in obj) {
+        var tokenField = document.createElement('input');
+        tokenField.type = 'hidden';
+        tokenField.name = k;
+        tokenField.value = obj[k];
+        form.appendChild(tokenField);
+    }
+
+    document.body.appendChild(form);
+    form.submit();
+    return form;
+}
